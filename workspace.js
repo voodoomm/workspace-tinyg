@@ -224,6 +224,7 @@ cpdefine("inline:com-chilipeppr-workspace-tinyg", ["chilipeppr_ready"], function
         },
         
         loadTabletMode: function(callback) {
+            $('#com-chilipeppr-ws-gcode-dragdrop').next('div').append('<button type="button" class="btn btn-xs btn-default tabmode-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Hide 3d viewer." data-trigger="hover" data-delay="100">Tablet Mode</button>');
             $('#com-chilipeppr-3dviewer').parent().closest('div').addClass('tabmodecol');
             $('#com-chilipeppr-xyz').parent().closest('div').addClass('tabmodecol');
             $('#com-chilipeppr-ws-gcode-hdr .tabmode-button').click(function (evt) {
