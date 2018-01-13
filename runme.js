@@ -46,8 +46,8 @@ http.createServer(function(req, res) {
     notes += "<p>Generated a new " + fileAutoGeneratePath + " file...</p>";
     //pushToGithub();
     //pushToGithubSync();
-    pushToGithubAsync();
-    notes += "<p>Pushed updates to Github...</p>";
+    //pushToGithubAsync();
+    //notes += "<p>Pushed updates to Github...</p>";
 
     //html = html + htmlDocs;
     var finalHtml = htmlDocs.replace(/<!-- pre-notes -->/, notes);
@@ -1176,9 +1176,9 @@ var pushToGithubSync = function() {
   // git push
   var stdout = "";
   stdout += "> git add *\n";
-  stdout += '> git commit -m "Made some changes to ChiliPeppr myWorkspace using Cloud9"\n';
+  stdout += '> git commit -m "Did some stuff in Cloud9"\n';
   stdout += "> git push\n";
-  stdout += proc.execSync('git add *; git commit -m "Made some changes to ChiliPeppr myWorkspace using Cloud9"; git push;', { encoding: 'utf8' });
+  stdout += proc.execSync('git add *; git commit -m "Did some stuff in Cloud9"; git push;', { encoding: 'utf8' });
   console.log("Pushed to github sync. Stdout:", stdout);
   
   return stdout;
@@ -1190,7 +1190,7 @@ var pushToGithubAsync = function() {
   exec('git add *', function(error1, stdout1, stderr1) {
     // command output is in stdout
     console.log("stdout:", stdout1, "stderr:", stderr1);
-    exec('bash -c "git commit -m \\"Made some changes to ChiliPeppr myWorkspace using Cloud9\\""', function(error2, stdout2, stderr2) {
+    exec('bash -c "git commit -m \\"Did some stuff in Cloud9\\""', function(error2, stdout2, stderr2) {
       // command output is in stdout
       console.log("stdout:", stdout2, "stderr:", stderr2);
       exec('git push', function(error3, stdout3, stderr3) {
